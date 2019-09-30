@@ -1,0 +1,87 @@
+<div class="card">
+        <div class="card-header">
+          <h4 align="center">BookList Component</h4>
+        </div>
+        <div class="card-body">
+          <button class="btn btn-primary" (click)="toggleDetails()" >{{showbooks ? 'Hide' : 'Show'}} Details</button>
+        
+          <h3 align="center"><b>Hello {{book_name}}, Here is the list of books.</b></h3><hr>
+
+          <!-- use property binding to bind the input values -->
+        <!-- <app-bookcount 
+            [all]="getTotalBookCount()"
+            [computer_Programming]="getTotalProgrammingBookCount()" 
+            [novel]="getTotalNovelBookCount()" 
+            (countRadioButtonSelectionChanges)="onBookCountRadioButtonChange($event)">
+        </app-bookcount><hr> -->
+      
+        
+
+              <!-- <h4>Total books: {{books.length}}</h4>
+      
+              <div *ngFor="let b of books">
+                <h5>Book Code: {{b.bookid}}</h5>
+                <span>Book Name: {{b.bookname}}</span> <br/>
+                <span>Publisher: {{b.publisher}}</span> <br/>
+                <span>Price: {{b.price}}</span> <br/>
+                <span>Image File: {{b.thumbnail}}</span> <br/>
+                <img height="80px" width="80px" src="{{b.thumbnail}}"/>
+                <button class="btn btn-primary">Edit this book</button>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-danger">Delete this book</button>
+                <hr/>
+              </div> -->
+           
+<div >
+             <table align="center"> 
+                  <thead>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th >Author</th>
+                      <!-- <th *ngIf='showbooks'>Category</th> -->
+                      <th *ngIf='showbooks'>Price<br>
+                        <select [(ngModel)] = "currency" value="INR">
+                        
+                          <option *ngFor="let c of currencies" [ngValue]="c">{{c}}</option>
+ 
+                        </select>
+
+                      </th>
+                      <th *ngIf='showbooks'>Image</th>
+                      <!-- <th *ngIf='showbooks'>Publish Date</th> -->
+                      <th >Edit Book</th>
+                      <th >Delete Book</th>
+                      <th >Availability</th>
+
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let book of books;">
+                          <tr *ngIf = "selectedBookCountRadioButton == 'All' || selectedBookCountRadioButton == book.Category"> 
+                             <td>{{book.BookId}}</td>
+                              <td>{{book.Name}}</td>
+                              <td >{{book.Publisher | uppercase}}</td>
+                              <!-- <td *ngIf='showbooks' >{{book.category}}</td> -->
+                              <td *ngIf='showbooks' >{{ book.Price | bookCurrency: currency | currency:currency:'symbol'}}</td>
+                               <td *ngIf='showbooks' align="center"><img height="100px" width="100px" src="{{ book.Thumbnail }}"/></td>
+                              <!-- <td *ngIf='showbooks' >{{book.publishDate | date:'fullDate'}}</td> -->
+                              
+                              <td ><button class="btn btn-primary" (click)="editBook(book.BookId)">Edit</button></td>
+                              <td ><button class="btn btn-danger" (click)="DeleteBook(book.BookId)">Delete</button></td>
+                              <td align="center"><img height="100px" width="100px" src="{{ book.InStock | availability }}"/></td>
+                            </tr>
+                    </ng-container>
+                      
+              
+              
+                  </tbody>
+            </table> 
+</div>
+
+            
+          <!-- <select>
+            <option *ngFor="let b of books">
+              {{b.bookid}}
+            </option>
+          </select> -->
+        </div>
+      </div>

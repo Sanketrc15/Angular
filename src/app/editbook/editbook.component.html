@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">
+      <h4 align="center">Edit Book Component</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- <p>
+        Book Id:
+        <input type="text" [(ngModel)]="Id"/>
+      </p> -->
+
+      <p>
+          Book Id: {{navigatedId}}
+      </p>
+ 
+      <p> BookName <input type="text" [(ngModel)]="bookobject.Name" value="{{bookobject.Name}}"/></p>
+
+      <p>Author<input type="text" [(ngModel)]="bookobject.Publisher" value="{{bookobject.Publisher}}"/></p>
+  
+      <!-- <p> Category <input type="text" [(ngModel)]="bookobject.category" value="{{bookobject.category}}"/></p> -->
+
+      <p> Price <input type="text" [(ngModel)]="bookobject.Price" value="{{bookobject.Price}}"/></p>
+  
+      <p> Thumbnail Image: (Choose image file) 
+          <input type="file" [(ngModel)]="thumbnail"/>
+      </p>
+      
+
+      <!-- <p> PublishDate <input type="text" [(ngModel)]="bookobject.publishDate" value="{{bookobject.publishDate}}"/> -->
+      <!-- </p> -->
+  
+      <button class="btn btn-primary" (click)="editBook()">
+        Edit Book
+      </button>
+    </div>
+  </div>

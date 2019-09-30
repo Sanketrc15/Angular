@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+      <h4 align="center">SearchBook Component</h4>
+    </div>
+    <div class="card-body">
+      <p>
+        Book code to search:
+        <input type="text" [(ngModel)]="bookid"/>
+  
+        <span *ngIf="errormessage && bookid" align="center" style="color:red">
+          <b>{{errormessage}}</b>
+        </span>
+      </p>
+  
+      <button class="btn btn-primary" (click)="PassToChild()">Get Details</button>
+      <br/><br/>
+      <app-search-result [searchbookid]="childbookid" (errorevent)="GetErrorMessage($event)">
+  
+      </app-search-result>
+    </div>
+  </div>

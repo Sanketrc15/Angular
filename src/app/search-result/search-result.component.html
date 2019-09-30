@@ -1,0 +1,27 @@
+<div class="card" style="background-color:silver">
+    <div class="card-header">
+      <h4 align="center">SearchResult Component</h4>
+    </div>
+    <div class="card-body">
+  
+       <h4 *ngIf="result!=undefined || result!=null ; else sometemplate" align="center" style="font-size: 50px">
+          <img height="400px" width="400px" src="{{result.Thumbnail}} " style =" float:left" /><br/>
+        
+         <b style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ; color:darkcyan" >Book Name: </b> {{result.Name}} <br/>
+          <b style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ; color:darkcyan">Publisher:</b> {{result.Publisher}} <br/>
+         <b style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ; color:darkcyan">Price: </b> {{result.Price}} <br/>
+        </h4> 
+
+      <ng-template #sometemplate>
+        <p align = "center">
+          <b style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ; color:darkgreen ; font-size: 30px" >Enter Book Id in the box............</b>
+        </p>
+      </ng-template>
+  
+      <!-- <p *ngIf="result==undefined || result==null">
+        BOOK NOT FOUND
+      </p>  -->
+
+    </div>
+  </div>
+

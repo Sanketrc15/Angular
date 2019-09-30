@@ -1,0 +1,54 @@
+
+<div class="card">
+      <div class="card-header">
+          <h1 align ="center" style="color:rgb(61, 8, 252) ; text-shadow: 3px 2px red;"><b>{{pageheader}} </b> </h1>
+          Enter Name: <input type="text" [(ngModel)]="name" />
+      </div>
+
+     <div class = "card-body" >  
+           <div styles="padding:5px">
+              <ul class="nav nav-tabs"> 
+
+                  <li routerLinkActive="active" >
+                                    <a routerLink="home" class="btn btn-primary" style="color:white">Home</a>
+                  </li>
+                  &nbsp;&nbsp;&nbsp;
+       
+                  <li routerLinkActive="active">
+                      <a routerLink="booklist" class="btn btn-primary" style="color:white">BookList</a>
+                  </li>
+                  &nbsp;&nbsp;&nbsp;
+
+                  <li routerLinkActive="active">
+                        <a routerLink="addBook" class="btn btn-primary" style="color:white">AddBook</a>
+                  </li>
+                  &nbsp;&nbsp;&nbsp;
+
+                  <li routerLinkActive="active">
+                        <a routerLink="searchBook" class="btn btn-primary" style="color:white">SearchBook</a>
+                  </li>
+                  &nbsp;&nbsp;&nbsp;
+                  
+                  <li routerLinkActive="active">
+                                    <a routerLink="aboutus" class="btn btn-primary" style="color:white">About Us</a>
+                  </li>
+                  &nbsp;&nbsp;&nbsp;
+
+                  <li routerLinkActive="active">
+                              <a routerLink="downloads" class="btn btn-primary" style="color:white">Download</a>
+                  </li>
+                   &nbsp;&nbsp;&nbsp;
+
+
+             </ul> 
+       
+              <router-outlet></router-outlet>
+           </div> 
+
+          <!-- <app-book  (editBookEvent)=editData($event)></app-book>
+         <app-search-book></app-search-book>
+         <app-add-book ></app-add-book>
+         <app-editbook [editedId]='bookid' ></app-editbook> -->
+      <!-- </div>  -->
+
+</div>
