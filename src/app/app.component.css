@@ -28,9 +28,13 @@
   }
   
   .menu {
-    background-color: #f3f3f3;
+
     position: absolute;
     cursor: pointer;
+    border-style: groove;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: rgb(205, 237, 245);
   }
   
   .menu-item {
@@ -39,7 +43,7 @@
   }
   
   .menu-item.selected {
-    background-color: slateGray;
+    background-color: rgb(65, 133, 150);
     color: white;
   }
   
